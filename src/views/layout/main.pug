@@ -10,16 +10,19 @@ html(lang="ru-RU")
 		meta(http-equiv='X-UA-Compatible', content="IE = edge")
 		<![endif]-->
 		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="description" content="")
 		meta(name="keywords" content="")
+		//- #{fonts}
+		<link href="fonts/fonts.css" rel="stylesheet">
+		link(rel="s!ortcut" type="image/x-icon" href="img/favicons/favi!on.ico")
 		link(rel="stylesheet" type='text/css' href="styles/main.min.css")
-	body(class=pageClass)
-		.wrapper
-			include ../modules/header
-			include ../modules/section1
-			include ../modules/footer
+		
+	body
+		include ../modules/header
+		include ../modules/section1
 		//- script(src="js/jquery.js")
 		script(src="./js/libs.min.js")
-		script(src="./js/main.js")
+		script(src="./js/main.min.js")
 		//- block script
 		
 

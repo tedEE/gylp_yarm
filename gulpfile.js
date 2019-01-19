@@ -6,8 +6,13 @@ global.$ = {
     babel: require("gulp-babel"),
     uglify: require("gulp-uglify"),
     concat: require("gulp-concat"),
-   // sass: require("gulp-sass"),
+    sass: require("gulp-sass"),
+    gulpcheerio : require('gulp-cheerio'),
+    imageminSvgo : require('imagemin-svgo'),
+    cheerio : require('cheerio'),
+    svgmin : require('gulp-svgmin'),
     stylus : require('gulp-stylus'),
+    // nib : require('nib'),
 	gcmq : require('gulp-group-css-media-queries'),
     mincss: require("gulp-clean-css"),
     pug : require('gulp-pug'),
@@ -17,9 +22,11 @@ global.$ = {
     pngquant: require("imagemin-pngquant"),
     imageminJpegRecompress: require("imagemin-jpeg-recompress"),
     favicons: require("gulp-favicons"),
+    svgSymbols : require('gulp-svg-symbols'),
     iconfont: require("gulp-iconfont"),
     iconfontcss: require("gulp-iconfont-css"),
-	svgSprite: require("gulp-svg-sprites"),
+	// svgSprite: require("gulp-svg-sprites"),
+    // font2css : require('gulp-font2css'),
     replace: require("gulp-replace"),
     rigger: require("gulp-rigger"),
     newer: require("gulp-newer"),
@@ -38,7 +45,7 @@ $.path.tasks.forEach(function(taskPath) {
 });
 
 // BUILD
-$.gulp.task("default", $.gulp.series("clean", "sprite", "iconfont", "libs",
+$.gulp.task("default", $.gulp.series("clean","fonts", "sprite", "iconfont", "libs",
     $.gulp.parallel("html", "styles", "favicons", "images", "scripts", "server_conf"),
     $.gulp.parallel("watch", "serve")
 ));

@@ -10,5 +10,6 @@ module.exports = [
     "./gulp/tasks/libs",
     "./gulp/tasks/watch",
     "./gulp/tasks/clean",
+    "./gulp/tasks/fonts",
     "./gulp/tasks/serve"
 ];

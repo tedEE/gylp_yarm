@@ -4,6 +4,7 @@ module.exports = function () {
             $.browsersync.init({
                 server: "./dest/",
                 tunnel: true,
+                // open: false,
                 port: 9000
             });
             res();
