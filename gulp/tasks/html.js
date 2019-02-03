@@ -1,6 +1,7 @@
 module.exports = function() {
 	$.gulp.task("html", function () {
-	return $.gulp.src("./src/views/**/index.pug")
+	// return $.gulp.src("./src/views/**/index.pug")
+	return $.gulp.src("./src/views/*.pug")
 				.pipe($.plumber())
 				.pipe($.pug({
 					pretty:true //иначе html будет выводиться в одну строку

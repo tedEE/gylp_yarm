@@ -1,10 +1,10 @@
 module.exports = function () {
     $.gulp.task("scripts", function () {
-        return $.gulp.src(["./src/js/**/*.js", "!./src/vendor/**/*.js"])
+        return $.gulp.src(["./src/js/**/*.js", "!./src/libs/**/*.js"])
             .pipe($.sourcemaps.init())
             .pipe($.babel({presets: ["@babel/preset-env"]}))
             .pipe($.concat("main.js"))
-            .pipe($.uglify())
+            // .pipe($.uglify())
             .pipe($.rename({suffix: ".min"}))
             .pipe($.sourcemaps.write("./maps/"))
             .pipe($.gulp.dest("./dest/js/"))

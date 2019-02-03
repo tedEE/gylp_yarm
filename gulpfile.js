@@ -13,6 +13,7 @@ global.$ = {
     svgmin : require('gulp-svgmin'),
     stylus : require('gulp-stylus'),
     // nib : require('nib'),
+    mainBowerFiles : require('gulp-main-bower-files'),
 	gcmq : require('gulp-group-css-media-queries'),
     mincss: require("gulp-clean-css"),
     pug : require('gulp-pug'),
@@ -46,6 +47,11 @@ $.path.tasks.forEach(function(taskPath) {
 
 // BUILD
 $.gulp.task("default", $.gulp.series("clean","fonts", "sprite", "iconfont", "libs",
+    $.gulp.parallel("html", "styles", "favicons", "images", "scripts", "server_conf"),
+    $.gulp.parallel("watch", "serve")
+));
+
+$.gulp.task("dev", $.gulp.series("fonts", "sprite", "iconfont", "libs",
     $.gulp.parallel("html", "styles", "favicons", "images", "scripts", "server_conf"),
     $.gulp.parallel("watch", "serve")
 ));
