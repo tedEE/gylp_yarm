@@ -2,7 +2,7 @@ var smartgrid = require('smart-grid');
 
 /* It's principal settings in smart grid project */
 var settings = {
-    outputStyle: 'styl', /* less || scss || sass || styl */
+    outputStyle: 'scss', /* less || scss || sass || styl */
     columns: 12, /* number of grid columns */
     offset: '30px', /* gutter width px || % || rem */
     mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
@@ -24,7 +24,7 @@ var settings = {
         xs: {
             width: '560px'
         }
-        /* 
+        /*
         We can create any quantity of break points.
 
         some_name: {
@@ -36,4 +36,4 @@ var settings = {
     }
 };
 
-smartgrid('./src/styles/', settings);
+smartgrid('./src/sass', settings);

@@ -1,0 +1,31 @@
+//include _mixins
+include ./mixin/mixins
+block head
+
+doctype html
+html(lang="ru")
+  head
+
+    title= pageTitle
+
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    meta(name="keywords" content)
+
+    if isProduction
+      link(rel="stylesheet" href="css/build.css")
+    else
+      link(rel="stylesheet" href="css/main.css")
+
+  body
+    block content
+    .wrapper
+      include modules/_header
+
+
+    block popups
+
+    if !isProduction
+      block scripts
+        script(src="./js/index.js")
